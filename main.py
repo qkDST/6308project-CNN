@@ -1,4 +1,4 @@
-# 1. 导入必要库
+# 1. 导入
 import os
 import re
 import numpy as np
@@ -21,18 +21,18 @@ from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLRO
 from tensorflow.keras.optimizers import Adam
 import nltk
 
-# 下载nltk必要资源（仅分词和停用词库）
+# 下载必要资源（仅分词和停用词库）
 nltk.download('punkt')
 nltk.download('stopwords')
 
-# 2. 配置全局参数
+# 2. 配置参数
 class Config:
-    # 核心：配置Yahoo和Yelp数据集路径（train.csv和test.csv都需要）
+    # 核心：配置Yahoo和Yelp数据集路径
     YAHOO_TRAIN_PATH = "C:/Users/31278/Desktop/text_classification/yahoo_answers_csv/train.csv"
     YAHOO_TEST_PATH = "C:/Users/31278/Desktop/text_classification/yahoo_answers_csv/test.csv"
     YELP_TRAIN_PATH = "C:/Users/31278/Desktop/text_classification/yelp_review_polarity_csv/train.csv"
     YELP_TEST_PATH = "C:/Users/31278/Desktop/text_classification/yelp_review_polarity_csv/test.csv"
-    SAVE_MODEL_PATH = "best_models/"  # 最佳模型保存路径（自动创建）
+    SAVE_MODEL_PATH = "best_models/"  # 最佳模型保存路径
     
     # 数据预处理参数（嵌入层随机初始化）
     SAMPLE_RATIO = 0.2  # 取样20%数据（避免训练过久，可改0.1更快）
@@ -42,7 +42,7 @@ class Config:
     EMBEDDING_DIM = 100  # 嵌入层维度（随机初始化）
     
     # 训练参数
-    BATCH_SIZE = 64  # 降低批次大小，避免内存不足（原128，根据电脑性能替换）
+    BATCH_SIZE = 64  # 降低批次大小，避免内存不足（根据电脑性能替换64或128）
     EPOCHS = 15  # 减少训练轮次，加快速度
     LEARNING_RATE = 0.001
     PATIENCE = 3  # 早停：3轮无提升则停止
@@ -469,4 +469,5 @@ def main():
 
 # 执行主函数
 if __name__ == "__main__":
+
     main()
