@@ -10,8 +10,9 @@ Yelp Review Polarity：二分类任务（正负评论），下载地址：https:
 2. Text DenseNet：2个密集块 + 过渡层 + 全局最大池化 + Dropout
 
 
-#11.24更新by黄梓昊
+# 11.24更新by黄梓昊
 pytorch版本更新版存放于project_v1.1中
+让ai多写了一个main文件可以直接使用main脚本运行不用输命令
 添加了earlystop以便及时停止训练
 并去了一丢丢代码的ai味
 为了加快运行速度规定了每个数据集只读前10%（几十万几百万的数据真的会跑一天）
